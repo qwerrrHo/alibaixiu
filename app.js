@@ -2,6 +2,7 @@ const express = require('express')
 const ejs = require('ejs')
 const bodyParser = require('body-parser')
 const usersRouter = require('./router/usersRouter.js')
+const categoryRouter = require('./router/categoryRouter.js')
 let app = express()
 
 // 配置ejs模板引擎
@@ -20,6 +21,7 @@ app.use('/assets', express.static('./assets'))
 
 // 注册路由中间件
 app.use(usersRouter)
+app.use(categoryRouter)
 
 app.listen(3000, () => {
     console.log('running');
